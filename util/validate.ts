@@ -35,6 +35,7 @@ export type Options = {
   prependChapterTitles?: boolean;
   date?: string;
   lang?: string;
+  css?: string;
   fonts?: Font[];
   version?: number;
   fetchTimeout?: number;
