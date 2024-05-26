@@ -99,8 +99,10 @@ export class EPub {
   }
 
   protected async generateTemplateFiles() {
-    const css = await fetchFileContent("template.css");
-
+    let css = await fetchFileContent("template.css");
+    if(this.options.css){
+      css = css + this.options.css
+    }
     this.zip.addFile("OEBPS/style.css", css);
 
     for (const chapter of this.content) {
